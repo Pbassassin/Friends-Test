@@ -1,0 +1,24 @@
+<% content_for :title, "Editing friend" %>
+<div class="card m-4">
+  <div class="card-header">
+  <h1>Editing friend</h1>
+  </div>
+  <div class="card-body">
+    <%= render "form", friend: @friend %>
+  </div>
+  <div class="card-footer text-muted">
+  <div class= "d-inline-flex gap-2 ms-4 mt-2 mb-2">
+  <%= link_to "Show", friend_path, class: "btn btn-secondary" %>
+  <%= button_to "Delete", @friend, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <%= link_to "Back", friends_path, class: "btn btn-dark" %>
+</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

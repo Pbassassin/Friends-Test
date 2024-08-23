@@ -1,0 +1,48 @@
+<% if user_signed_in? %>
+<div class="m-4 card">
+  <div class="card-header">
+    <h2>Friends</h2>
+  </div>
+  <div class="card-body">
+  <div id="friends" class="ms-4 me-4">
+  <table class="table table-hover table-striped">
+    <tr class="table-dark">
+      <th>Name</th>
+      <th>Gmail</th>
+      <th>Phone No</th>
+      <th>Twitter</th>
+    </tr>
+    <% @friends.each do |friend| %>
+      <% if friend.user == current_user %>
+      <tr>
+        <td><%= link_to friend.first_name + " " + friend.last_name, friend %></td>
+        <td><%= friend.gmail %></td>
+        <td><%= friend.phone_no %></td>
+        <td><%= friend.twitter %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </table>
+  
+  </div>
+</div>
+<% else %>
+<div class= "m-4">
+<h1>Home Page</h1>
+<p>Hey! Go Login and Add some Friends Here!</p>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+<div class="card text-center">
+  <div class="card-header">
+      <%= friend.first_name %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= friend.first_name %> <%= friend.last_name %></h5>
+      <p class="card-text"><%= friend.twitter %> | <%= friend.phone_no %></p>
+      <p><%= friend.gmail %></p>
+    </div>
+    <div class="card-footer text-muted">
+      <div class="d-inline-flex gap-2">
+        <%= link_to "Edit", edit_friend_path(friend), class: "btn btn-secondary" %>
+        <%= button_to "Delete", @friend, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        <%= link_to "Back", friends_path, class: "btn btn-dark" %>
+      </div>
+  </div>
+</div>
